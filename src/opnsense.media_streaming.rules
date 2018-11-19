@@ -52,3 +52,6 @@
 #alert dns any any -> any 53 (msg:"OPN_Media_Streaming - TuneIn - DNS request for tunein.com"; dns_query; content:"tunein.com"; nocase; classtype:media-streaming; sid:55000051;)
 #alert http any any -> any $HTTP_PORTS (msg:"OPN_Media_Streaming - TuneIn - Related URL (tunein.com)"; content:"tunein.com"; http_uri; flow:to_server,established; classtype:media-streaming; sid:55000052; rev:1;)
 #alert tls any any -> any any (msg:"OPN_Media_Streaming - TuneIn - Related TLS SNI (tunein.com)"; tls_sni; content:"tunein.com";flow:to_server,established; classtype:media-streaming; sid:55000053; rev:1;)
+#alert dns any any -> any 53 (msg:"OPN_Media_Streaming - Youtube - DNS request for youtube.com"; dns_query; content:"youtube.com"; nocase; classtype:media-streaming; sid:55000054;)
+#alert http any any -> any $HTTP_PORTS (msg:"OPN_Media_Streaming - Youtube - Related URL (youtube.com)"; content:"youtube.com"; http_uri; flow:to_server,established; classtype:media-streaming; sid:55000055; rev:1;)
+#alert tls any any -> any any (msg:"OPN_Media_Streaming - Youtube - Related TLS SNI (youtube.com)"; tls_sni; content:"youtube.com";flow:to_server,established; classtype:media-streaming; sid:55000056; rev:1;)
